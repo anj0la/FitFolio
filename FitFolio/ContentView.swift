@@ -11,51 +11,80 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    @State private var progress = 0.5
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
+        HStack {
+            VStack(alignment: .leading) {
+                Text(getTimeOfDay())
+                    .font(.subheadline)
+                Text(getDay())
+                    .font(.title)
+                Text("Nutrition Overview")
+                    .font(.title2)
+                // Total kcals, fats, carbs, and protein the user has accumulated in respect to their target for the day
+                HStack {
+                    Text("2000/2300").font(.caption2).padding(.leading, 12)
+                    Text("10/50").font(.caption2).padding(.leading, 40)
+                    Text("50/100").font(.caption2).padding(.leading, 52)
+                    Text("25/75").font(.caption2).padding(.leading, 52)
+                }.padding(.top, 2.5)
+                // Progress bars for each macro and kcals
+                HStack {
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.25)
+                    
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.25)
+                    
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.25)
+                    
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.25)
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
-}
+                }.padding(.top, -15)
+                Divider()
+                
+                Spacer()
+            } // VStack
+            Spacer()
+        }.padding(.leading, 20) // HStack
+        
+    } // body
+    
+    /// Returns the string value of the current time of day.
+    ///
+    /// - Returns: The string value of the current time of day (i.e., morning, afternoon or evening).
+    private func getTimeOfDay() -> String {
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: Date())
+        switch hour {
+        case 0..<12:
+            return "Good morning"
+        case 12..<17:
+            return "Good afternoon"
+        default:
+            return "Good evening!"
+        } // switch
+    } // getTimeOfDay
+    
+    /// Returns the current day of the week as a string.
+    ///
+    /// - Returns: The current date of the week as a string.
+    private func getDay() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE, MMM d"
+        return dateFormatter.string(from: Date())
+    } // getDay
+    
+} // ContentView
 
 #Preview {
     ContentView()
         .modelContainer(for: Item.self, inMemory: true)
-}
+} // #Preview
