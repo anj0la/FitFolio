@@ -21,7 +21,7 @@ struct ContentView: View {
                 Text(getDay())
                     .font(.title)
                 Text("Nutrition Overview")
-                    .font(.title2)
+                    .font(.title3).padding(.top, 0.01)
                 // Total kcals, fats, carbs, and protein the user has accumulated in respect to their target for the day
                 HStack {
                     Text("2000/2300").font(.caption2).padding(.leading, 12)
@@ -47,13 +47,131 @@ struct ContentView: View {
                         .progressViewStyle(LinearProgressViewStyle(tint: .black))
                         .padding().scaleEffect(1.25)
 
-                }.padding(.top, -15)
+                }.padding(.top, -15) // Progress of daily targets
                 Divider()
+                
+                // Row 1
+                
+                HStack {
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                }
+                
+                // Row 2
+                
+                HStack {
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                }
+                
+                // Row 3
+                
+                HStack {
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                }
+                
+                // Row 4
+                
+                HStack {
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                }
+                
+                HStack {
+                    Text("Mo").font(.caption).bold().padding(.leading, 15)
+                    Text("Tu").font(.caption).bold().padding(.leading, 25)
+                    Text("We").font(.caption).bold().padding(.leading, 30)
+                    Text("Th").font(.caption).bold().padding(.leading, 30)
+                    Text("Fr").font(.caption).bold().padding(.leading, 30)
+                    Text("Sa").font(.caption).bold().padding(.leading, 30)
+                    Text("Su").font(.caption).bold().padding(.leading, 30)
+                }
                 
                 Spacer()
             } // VStack
             Spacer()
         }.padding(.leading, 20) // HStack
+        
+        HStack {
+         Text("Hi")
+        }
         
     } // body
     
@@ -82,6 +200,7 @@ struct ContentView: View {
         return dateFormatter.string(from: Date())
     } // getDay
     
+  
 } // ContentView
 
 #Preview {
