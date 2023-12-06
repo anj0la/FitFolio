@@ -3,6 +3,7 @@
 //  FitFolio
 //
 //  Created by Anjola Aina on 2023-11-30.
+//  Last Modified on 2023-12-06.
 //
 
 import SwiftUI
@@ -16,162 +17,21 @@ struct ContentView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(getTimeOfDay())
-                    .font(.subheadline)
-                Text(getDay())
-                    .font(.title)
-                Text("Nutrition Overview")
-                    .font(.title3).padding(.top, 0.01)
+                generateHeader()
                 // Total kcals, fats, carbs, and protein the user has accumulated in respect to their target for the day
-                HStack {
-                    Text("2000/2300").font(.caption2).padding(.leading, 12)
-                    Text("10/50").font(.caption2).padding(.leading, 40)
-                    Text("50/100").font(.caption2).padding(.leading, 52)
-                    Text("25/75").font(.caption2).padding(.leading, 52)
-                }.padding(.top, 2.5)
-                // Progress bars for each macro and kcals
-                HStack {
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.25)
-                    
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.25)
-                    
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.25)
-                    
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.25)
-
-                }.padding(.top, -15) // Progress of daily targets
+                generateDailyTargetText()
+                generateDailyTargetProgressBars()
                 Divider()
                 
-                // Row 1
-                
-                HStack {
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
+                // Rows
+                ForEach(0..<4) { row in
+                    generateProgressBarRows()
                 }
-                
-                // Row 2
-                
-                HStack {
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                }
-                
-                // Row 3
-                
-                HStack {
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                }
-                
-                // Row 4
-                
-                HStack {
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                    ProgressView(value: progress)
-                        .progressViewStyle(LinearProgressViewStyle(tint: .black))
-                        .padding().scaleEffect(1.75).rotationEffect(.degrees(90))
-                }
-                
-                HStack {
-                    Text("Mo").font(.caption).bold().padding(.leading, 15)
-                    Text("Tu").font(.caption).bold().padding(.leading, 25)
-                    Text("We").font(.caption).bold().padding(.leading, 30)
-                    Text("Th").font(.caption).bold().padding(.leading, 30)
-                    Text("Fr").font(.caption).bold().padding(.leading, 30)
-                    Text("Sa").font(.caption).bold().padding(.leading, 30)
-                    Text("Su").font(.caption).bold().padding(.leading, 30)
-                }
-                
+                generateDaysOfTheWeekText()
                 Spacer()
             } // VStack
             Spacer()
         }.padding(.leading, 20) // HStack
-        
-        HStack {
-         Text("Hi")
-        }
         
     } // body
     
@@ -200,6 +60,66 @@ struct ContentView: View {
         return dateFormatter.string(from: Date())
     } // getDay
     
+    /// Returns a VStack containing the time of day and the current day.
+    ///
+    /// - Returns: VStack containing information about the current day.
+    private func generateHeader() -> some View {
+        VStack(alignment: .leading) {
+            Text(getTimeOfDay())
+                .font(.subheadline)
+            Text(getDay())
+                .font(.title)
+            Text("Nutrition Overview")
+                .font(.title3).padding(.top, 0.01)
+        }
+    } // generateHeader
+    
+    /// Returns an HStack of the daily targets of calories, fat, carbs and protein.
+    ///
+    /// - Returns: HStack containing information about the daily target text.
+    private func generateDailyTargetText() -> some View {
+        HStack {
+            Text("2000/2300").font(.caption2).padding(.leading, 12)
+            Text("10/50").font(.caption2).padding(.leading, 40)
+            Text("50/100").font(.caption2).padding(.leading, 52)
+            Text("25/75").font(.caption2).padding(.leading, 52)
+        }.padding(.top, 2.5)
+    } // generateDailyTargetText
+    
+    private func generateDailyTargetProgressBars() -> some View {
+        HStack {
+            ForEach(0..<4) { _ in
+                ProgressView(value: progress)
+                    .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                    .padding()
+                    .scaleEffect(1.25)
+            }
+        }.padding(.top, -15)
+    } // generateDailyTargetProgressBars
+     
+    private func generateProgressBarRows() -> some View {
+        HStack {
+            ForEach(0..<7) { _ in
+                ProgressView(value: progress)
+                    .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                    .padding()
+                    .scaleEffect(1.5)
+                    .rotationEffect(.degrees(90))
+                }
+            }
+    } // generateProgressBarRows
+    
+    private func generateDaysOfTheWeekText() -> some View {
+        HStack {
+            Text("Mo").font(.caption).bold().padding(.leading, 15)
+            Text("Tu").font(.caption).bold().padding(.leading, 25)
+            Text("We").font(.caption).bold().padding(.leading, 30)
+            Text("Th").font(.caption).bold().padding(.leading, 30)
+            Text("Fr").font(.caption).bold().padding(.leading, 30)
+            Text("Sa").font(.caption).bold().padding(.leading, 30)
+            Text("Su").font(.caption).bold().padding(.leading, 30)
+        }
+    } // generateDaysOfTheWeekText
   
 } // ContentView
 
