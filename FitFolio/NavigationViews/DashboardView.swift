@@ -24,10 +24,14 @@ struct DashboardView: View {
                     generateProgressBarRows()
                 }
                 generateDaysOfTheWeekText()
+                generateInsights()
+                generateGoals()
                 Spacer()
             } // VStack
             Spacer()
         }.padding(.leading, 20) // HStack
+        
+        
         
     } // body
     
@@ -116,7 +120,60 @@ struct DashboardView: View {
             Text("Su").font(.caption).bold().padding(.leading, 30)
         }
     } // generateDaysOfTheWeekText
-}
+    
+    private func generateInsights() -> some View {
+        VStack (alignment: .leading) {
+            Text("Insights").font(.title3).padding(.top, 0.1)
+            Grid() {
+                GridRow {
+                    Text("WEIGHT").padding()
+                        .background(Rectangle().stroke())
+                    Text("TDEE").padding()
+                        .background(Rectangle().stroke())
+                }
+                GridRow {
+                    Text("STEPS").padding()
+                        .background(Rectangle().stroke())
+                    Text("WATER").padding()
+                        .background(Rectangle().stroke())
+                    }
+                }
+        }
+    } // generateInsights
+    
+    private func generateGoals() -> some View {
+        VStack (alignment: .leading) {
+            Text("Goals").font(.title3).padding(.top, 0.1)
+            Grid() {
+                GridRow {
+                    Text("FIBER").padding()
+                        .background(Rectangle().stroke())
+                    Text("SUGAR").padding()
+                        .background(Rectangle().stroke())
+                }
+                GridRow {
+                    Text("SODIUM").padding()
+                        .background(Rectangle().stroke())
+                    Text("IRON").padding()
+                        .background(Rectangle().stroke())
+                    }
+                GridRow {
+                    Text("MAGNESIUM").padding()
+                        .background(Rectangle().stroke())
+                    Text("VITAMIN C").padding()
+                        .background(Rectangle().stroke())
+                    }
+                GridRow {
+                    Text("CALCIUM").padding()
+                        .background(Rectangle().stroke())
+                    Text("VITAMIN D").padding()
+                        .background(Rectangle().stroke())
+                }
+            }
+        }
+    }
+    
+} // ContentView
 
 #Preview {
     DashboardView()
