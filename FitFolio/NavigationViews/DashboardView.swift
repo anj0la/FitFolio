@@ -32,8 +32,6 @@ struct DashboardView: View {
             Spacer()
         }.padding(.leading, 20).onAppear {selectedText = "Dashboard"} // HStack
         
-        
-        
     } // body
     
     /// Returns the string value of the current time of day.
@@ -87,6 +85,9 @@ struct DashboardView: View {
         }.padding(.top, 2.5)
     } // generateDailyTargetText
     
+    /// Returns an HStack of the progress bars of the daily targets of calories, fat, carbs and protein.
+    ///
+    /// - Returns: HStack containing information about the daily target progress bars..
     private func generateDailyTargetProgressBars() -> some View {
         HStack {
             ForEach(0..<4) { _ in
@@ -98,6 +99,9 @@ struct DashboardView: View {
         }.padding(.top, -15)
     } // generateDailyTargetProgressBars
      
+    /// Returns an HStack of the progress bars of one of the days in a week, highlight the total number of calories, fat, carbs and protein for that day.
+    ///
+    /// - Returns: HStack containing information about a day's targets.
     private func generateProgressBarRows() -> some View {
         HStack {
             ForEach(0..<7) { _ in
@@ -110,6 +114,9 @@ struct DashboardView: View {
             }
     } // generateProgressBarRows
     
+    /// Returns an HStack displaying the days of the week.
+    ///
+    /// - Returns: HStack displaying each day of the week as text.
     private func generateDaysOfTheWeekText() -> some View {
         HStack {
             Text("Mo").font(.caption).bold().padding(.leading, 15)
@@ -122,66 +129,89 @@ struct DashboardView: View {
         }
     } // generateDaysOfTheWeekText
     
+    /// Returns an VStack containing information on important insights, which are the user's weight, TDEE, steps and water intake..
+    ///
+    /// - Returns: VStack containing information about important insights of the user.
     private func generateInsights() -> some View {
         VStack (alignment: .leading) {
             Text("Insights").font(.title3).padding(.top, 0.1)
             Grid() {
                 GridRow {
-                    Text("WEIGHT").padding()
-                        .background(Rectangle().stroke())
-                    Text("TDEE").padding()
-                        .background(Rectangle().stroke())
+                    generateCardWithGraph(cardHeaderName: "WEIGHT", cardFooterName: "140 lbs")
+                    generateCardWithGraph(cardHeaderName: "TDEE", cardFooterName: "2000 cal")
                 }
                 GridRow {
-                    Text("STEPS").padding()
-                        .background(Rectangle().stroke())
-                    Text("WATER").padding()
-                        .background(Rectangle().stroke())
+                    generateCardWithGraph(cardHeaderName: "STEPS", cardFooterName: "7800 steps")
+                    generateCardWithGraph(cardHeaderName: "WATER", cardFooterName: "49 oz")
                     }
                 }
         }
     } // generateInsights
     
+    /// Returns an VStack containing information on goals that the user has indentified. Not all of these goals will be displayed, and will be dependent on whether the user wants to track the goals or not.
+    ///
+    /// - Returns: VStack containing information about goals  of the user.
     private func generateGoals() -> some View {
         VStack (alignment: .leading) {
             Text("Goals").font(.title3).padding(.top, 0.1)
             Grid() {
                 GridRow {
-                    Text("FIBER").padding()
-                        .background(Rectangle().stroke())
-                    Text("SUGAR").padding()
-                        .background(Rectangle().stroke())
+                    generateCardWithGraph(cardHeaderName: "FIBER", cardFooterName: "25 g")
+                    generateCardWithGraph(cardHeaderName: "SUGAR", cardFooterName: "39 g")
                 }
                 GridRow {
-                    Text("SODIUM").padding()
-                        .background(Rectangle().stroke())
-                    Text("IRON").padding()
-                        .background(Rectangle().stroke())
+                    generateCardWithGraph(cardHeaderName: "SODIUM", cardFooterName: "25 g")
+                    generateCardWithGraph(cardHeaderName: "IRON", cardFooterName: "39 g")
                     }
                 GridRow {
-                    Text("MAGNESIUM").padding()
-                        .background(Rectangle().stroke())
-                    Text("VITAMIN C").padding()
-                        .background(Rectangle().stroke())
+                    generateCardWithGraph(cardHeaderName: "MAGNESIUM", cardFooterName: "35 g")
+                    generateCardWithGraph(cardHeaderName: "VITAMIN C", cardFooterName: "29 g")
                     }
                 GridRow {
-                    Text("CALCIUM").padding()
-                        .background(Rectangle().stroke())
-                    Text("VITAMIN D").padding()
-                        .background(Rectangle().stroke())
+                    generateCardWithGraph(cardHeaderName: "CALCIUM", cardFooterName: "35 g")
+                    generateCardWithGraph(cardHeaderName: "VITAMIN D", cardFooterName: "29 g")
                 }
             }
         }
     } // generateGoals
     
-    private func generateGraph() -> some View {
-        HStack {
-            VStack {
-                Text("WEIGHT")
-                
-            }
-        }
+    /// Returns an VStack that generates a card view with a graph.
+    ///
+    /// - Parameters:
+    ///     - cardHeaderName: the value that the header of the card will be set to.
+    ///     - cardFooterName: the value that the footer of the card will be set to.
+    ///
+    /// - Returns: VStack containing information about important insights of the user.
+    private func generateCardWithGraph(cardHeaderName: String, cardFooterName: String) -> some View {
+        VStack (alignment: .leading) {
+            HStack {
+                Text(cardHeaderName)
+                Button(action: placeholder) {
+                    Image(systemName: "plus")
+                        .font(.body).foregroundStyle(.black)
+                }.frame(maxWidth: 100, alignment: .trailing)
+            } // top header
+            HStack {
+                ZStack {
+                    Rectangle().stroke().frame(width: 140, height: 110)
+                    Text("Placeholder for Graph")
+                } // Temporary placeholder for graph
+            } // the graph area
+            HStack {
+                Text(cardFooterName).font(.footnote)
+                Button(action: placeholder) {
+                    Image(systemName: "arrow.right")
+                        .font(.callout).foregroundStyle(.black)
+                }.frame(maxWidth: 125, alignment: .trailing)
+            }.padding(.top, 1) // bottom header
+            
+        }.padding().border(.black)
     } // generateGraph
+    
+    ///  Currently a placeholder function, but represents an action of the buttons on the cards with graphs.
+    private func placeholder() -> Void {
+        print("The button was clicked.")
+    }
     
 } // ContentView
 
