@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct MoreView: View {
+    @Binding var selectedText: String
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).onAppear { selectedText = "Journal" }
     }
 }
 
 #Preview {
-    MoreView()
+    MoreView(selectedText: .constant("Preview Text"))
 }

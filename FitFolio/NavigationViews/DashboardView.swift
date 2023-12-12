@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DashboardView: View {
     @State private var progress = 0.5 // will be taken from database, having separate progress bars for each day of the week
+    @Binding var selectedText: String
     
     var body: some View {
         HStack {
@@ -29,7 +30,7 @@ struct DashboardView: View {
                 Spacer()
             } // VStack
             Spacer()
-        }.padding(.leading, 20) // HStack
+        }.padding(.leading, 20).onAppear {selectedText = "Dashboard"} // HStack
         
         
         
@@ -171,10 +172,19 @@ struct DashboardView: View {
                 }
             }
         }
-    }
+    } // generateGoals
+    
+    private func generateGraph() -> some View {
+        HStack {
+            VStack {
+                Text("WEIGHT")
+                
+            }
+        }
+    } // generateGraph
     
 } // ContentView
 
 #Preview {
-    DashboardView()
+    DashboardView(selectedText: .constant("Preview Text"))
 }

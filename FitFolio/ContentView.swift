@@ -33,26 +33,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var currentView = "" // default value
 
     var body: some View {
+        Text(currentView)
         TabView {
-            DashboardView()
-                .tabItem {
+            ScrollView {
+                DashboardView(selectedText: $currentView)
+            }
+            .tabItem {
                     Label("Dashboard", systemImage: "square.grid.2x2.fill")
                 }
-            JournalView()
+            JournalView(selectedText: $currentView)
                 .tabItem {
                     Label("Journal", systemImage: "book.pages.fill")
                 }
-            AddView()
+            AddView(selectedText: $currentView)
                 .tabItem {
                     Label("Add", systemImage: "plus.circle.fill")
                 }
-            PathView()
+            PathView(selectedText: $currentView)
                 .tabItem {
                     Label("Path", systemImage: "point.topleft.down.to.point.bottomright.curvepath.fill")
                 }
-            MoreView()
+            MoreView(selectedText: $currentView)
                 .tabItem {
                     Label("More", systemImage: "ellipsis")
                 }
