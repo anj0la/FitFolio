@@ -42,10 +42,10 @@ struct JournalView: View {
     
     private func generateOverviewCircles() -> some View {
         HStack {
-            CircularProgressView(progress: 0.2, circleWidth: 7.5).padding(10)
-            CircularProgressView(progress: 0.2, circleWidth: 7.5).padding(10)
-            CircularProgressView(progress: 0.2, circleWidth: 7.5).padding(10)
-            CircularProgressView(progress: 0.2, circleWidth: 7.5).padding(10)
+            CircularProgressView(progress: 0.74, circleWidth: 7.5, intake: "1700", intakeTarget: "2300", intakeUnits: "cal", intakeColor: Color.green).padding(5)
+            CircularProgressView(progress: 0.6, circleWidth: 7.5, intake: "30", intakeTarget: "50", intakeUnits: "g", intakeColor: Color.cyan).padding(5)
+            CircularProgressView(progress: 0.66, circleWidth: 7.5, intake: "100", intakeTarget: "150", intakeUnits: "g", intakeColor: Color.yellow).padding(5)
+            CircularProgressView(progress: 0.75, circleWidth: 7.5, intake: "75", intakeTarget: "100", intakeUnits: "g", intakeColor: Color.purple).padding(5)
         }.padding(.leading, -10)
     } // generateOverviewCircles
     
