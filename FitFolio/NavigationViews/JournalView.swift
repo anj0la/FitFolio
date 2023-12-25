@@ -40,6 +40,12 @@ struct JournalView: View {
         }.frame(maxWidth: 358, alignment: .center) // temp fix
     } // generateHeader
     
+    ///
+    /// Returns an HStack containing all the circles that represent the current intake that a user has logged in for: calories, carbohydrates, fats and protein. Makes use of the custom circular progress view.
+    ///
+    /// - Returns: HStack containing information about current intake of calories, carbohydrates, fats and proteins for the selected day.
+    ///
+    ///
     private func generateOverviewCircles() -> some View {
         HStack {
             CircularProgressView(progress: 0.74, circleWidth: 7.5, intake: "1700", intakeTarget: "2300", intakeUnits: "cal", intakeColor: Color.green).padding(5)
@@ -54,6 +60,9 @@ struct JournalView: View {
         print("The button was clicked.")
     }
     
+    /// Shows the next day.
+    ///
+    ///
     private func showNextDay() -> Void {
         // This function would actually show the next day.
         // For now, only the text would change, but basically
