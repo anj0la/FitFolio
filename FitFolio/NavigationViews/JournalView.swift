@@ -16,6 +16,7 @@ struct JournalView: View {
             VStack(alignment: .leading) {
                 generateHeader()
                 generateOverviewCircles()
+                generateProgressBars()
                 Spacer()
             } // VStack
             Spacer()
@@ -54,6 +55,36 @@ struct JournalView: View {
             CircularProgressView(progress: 0.75, circleWidth: 7.5, intake: "75", intakeTarget: "100", intakeUnits: "g", intakeColor: Color.purple).padding(5)
         }.padding(.leading, -10)
     } // generateOverviewCircles
+    
+    private func generateProgressBars() -> some View {
+        HStack {
+            // Calories
+            Image(systemName: "flame.fill").resizable()
+                .frame(width: 10, height: 12).padding(.leading, -5)
+            ProgressView(value: 0.74)
+                .progressViewStyle(LinearProgressViewStyle(tint: .green))
+                .padding(.horizontal, 10.0)
+                .scaleEffect(1.35)
+            // Fats
+            Text("F").font(.caption).bold()
+            ProgressView(value: 0.6)
+                .progressViewStyle(LinearProgressViewStyle(tint: .cyan))
+                .padding(.horizontal, 10.0)
+                .scaleEffect(1.35)
+            // Carbs
+            Text("C").font(.caption).bold()
+            ProgressView(value: 0.66)
+                .progressViewStyle(LinearProgressViewStyle(tint: .yellow))
+                .padding(.horizontal, 10.0)
+                .scaleEffect(1.35)
+            // Protein
+            Text("P").font(.caption).bold()
+            ProgressView(value: 0.75)
+                .progressViewStyle(LinearProgressViewStyle(tint: .purple))
+                .padding(.horizontal, 10.0)
+                .scaleEffect(1.35)
+        }.padding(.top, -5).padding(.leading, -10)
+    }
     
     ///  Currently a placeholder function, but represents an action of the buttons on the cards with graphs.
     private func placeholder() -> Void {
