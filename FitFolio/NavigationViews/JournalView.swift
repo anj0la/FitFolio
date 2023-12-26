@@ -17,6 +17,8 @@ struct JournalView: View {
                 generateHeader()
                 generateOverviewCircles()
                 generateProgressBars()
+                Divider().padding(.bottom, 10)
+                createJournal()
                 Spacer()
             } // VStack
             Spacer()
@@ -83,9 +85,28 @@ struct JournalView: View {
                 .progressViewStyle(LinearProgressViewStyle(tint: .purple))
                 .padding(.horizontal, 10.0)
                 .scaleEffect(1.35)
-        }.padding(.top, -5).padding(.leading, -10)
+        }.padding(.top, 2.5).padding(.leading, -10)
     }
     
+    private func createJournal() -> some View {
+        HStack {
+            createTimesOfTheDay()
+        }
+    }
+    
+    private func createTimesOfTheDay() -> some View {
+        VStack {
+            createLargeTimestamp(currTime: "8:00 AM")
+            
+        }
+    }
+    
+    private func createLargeTimestamp(currTime: String) -> Text {
+        Text(currTime).padding(4).background(RoundedRectangle(cornerRadius: 5).fill(Color.black.opacity(0.05)) // Set the corner radius here
+            .stroke(Color.gray, lineWidth: 2)
+        ).bold() as! Text
+        
+    }
     ///  Currently a placeholder function, but represents an action of the buttons on the cards with graphs.
     private func placeholder() -> Void {
         print("The button was clicked.")
