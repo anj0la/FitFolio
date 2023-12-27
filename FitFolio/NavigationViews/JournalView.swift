@@ -52,8 +52,8 @@ struct JournalView: View {
     private func generateOverviewCircles() -> some View {
         HStack {
             CircularProgressView(progress: 0.74, circleWidth: 7.5, intake: "1700", intakeTarget: "2300", intakeUnits: "cal", intakeColor: Color.green).padding(5)
-            CircularProgressView(progress: 0.6, circleWidth: 7.5, intake: "30", intakeTarget: "50", intakeUnits: "g", intakeColor: Color.cyan).padding(5)
-            CircularProgressView(progress: 0.66, circleWidth: 7.5, intake: "100", intakeTarget: "150", intakeUnits: "g", intakeColor: Color.yellow).padding(5)
+            CircularProgressView(progress: 0.6, circleWidth: 7.5, intake: "30", intakeTarget: "50", intakeUnits: "g", intakeColor: Color.yellow).padding(5)
+            CircularProgressView(progress: 0.66, circleWidth: 7.5, intake: "100", intakeTarget: "150", intakeUnits: "g", intakeColor: Color.cyan).padding(5)
             CircularProgressView(progress: 0.75, circleWidth: 7.5, intake: "75", intakeTarget: "100", intakeUnits: "g", intakeColor: Color.purple).padding(5)
         }.padding(.leading, -10)
     } // generateOverviewCircles
@@ -70,13 +70,13 @@ struct JournalView: View {
             // Fats
             Text("F").font(.caption).bold()
             ProgressView(value: 0.6)
-                .progressViewStyle(LinearProgressViewStyle(tint: .cyan))
+                .progressViewStyle(LinearProgressViewStyle(tint: .yellow))
                 .padding(.horizontal, 10.0)
                 .scaleEffect(1.35)
             // Carbs
             Text("C").font(.caption).bold()
             ProgressView(value: 0.66)
-                .progressViewStyle(LinearProgressViewStyle(tint: .yellow))
+                .progressViewStyle(LinearProgressViewStyle(tint: .cyan))
                 .padding(.horizontal, 10.0)
                 .scaleEffect(1.35)
             // Protein
@@ -88,25 +88,84 @@ struct JournalView: View {
         }.padding(.top, 2.5).padding(.leading, -10)
     }
     
+    // This will be made into its own class (struct) tbh, called Journal, where there are timestamps, certain instances and functions such as creating timestamps, emptying a journal, adding a entry to the journal and so forth.
+    // I might make another struct called JournalEntry which actually creates one entry in the journal, by getting the timestamp, and then the calories, fats, carbs, and protein from the food.
     private func createJournal() -> some View {
         HStack {
             createTimesOfTheDay()
+            createJournalEntries()
         }
-    }
+    } // createJournal
     
-    private func createTimesOfTheDay() -> some View {
+    
+    private func createJournalEntries() -> some View {
         VStack {
-            createLargeTimestamp(currTime: "8:00 AM")
-            
+            createJournalEntryHeader()
+            createJournalEntryBody()
         }
     }
     
-    private func createLargeTimestamp(currTime: String) -> Text {
-        Text(currTime).padding(4).background(RoundedRectangle(cornerRadius: 5).fill(Color.black.opacity(0.05)) // Set the corner radius here
+    private func createJournalEntryHeader() -> some View {
+        HStack {
+            Text("200")
+            Image(systemName: "flame.fill").resizable()
+                .frame(width: 10, height: 12).padding(.leading, -5)
+            Text("20").padding(.leading, 10)
+            Text("F").font(.callout).bold().padding(.leading, -5)
+            Text("40")
+            Text("C").font(.callout).bold().padding(.leading, -5)
+            Text("30")
+            Text("P").font(.callout).bold().padding(.leading, -5)
+            Button(action: placeholder) {
+                Image(systemName: "plus.app.fill")
+                    .font(.body).foregroundStyle(.black)
+            }.padding(.leading, 45)
+        }
+    }
+    
+    private func createJournalEntryBody() -> some View {
+        Text("currTime").padding(4).background(RoundedRectangle(cornerRadius: 5).fill(Color.black.opacity(0.05)) // Set the corner radius here
             .stroke(Color.gray, lineWidth: 2)
-        ).bold() as! Text
+        )
         
     }
+    
+    
+    private func createTimesOfTheDay() -> some View {
+        VStack (alignment: .center){
+            createLargeTimestamp(currTime: "12:00 AM")
+            createLargeTimestamp(currTime: "1:00 AM")
+            createLargeTimestamp(currTime: "2:00 AM")
+            createLargeTimestamp(currTime: "3:00 AM")
+            createLargeTimestamp(currTime: "4:00 AM")
+            createLargeTimestamp(currTime: "5:00 AM")
+            createLargeTimestamp(currTime: "6:00 AM")
+            createLargeTimestamp(currTime: "7:00 AM")
+            createLargeTimestamp(currTime: "8:00 AM")
+            createLargeTimestamp(currTime: "9:00 AM")
+            createLargeTimestamp(currTime: "10:00 AM")
+            createLargeTimestamp(currTime: "11:00 AM")
+            createLargeTimestamp(currTime: "12:00 PM")
+            createLargeTimestamp(currTime: "1:00 PM")
+            createLargeTimestamp(currTime: "2:00 PM")
+            createLargeTimestamp(currTime: "3:00 PM")
+            createLargeTimestamp(currTime: "4:00 PM")
+            createLargeTimestamp(currTime: "5:00 PM")
+            createLargeTimestamp(currTime: "6:00 PM")
+            createLargeTimestamp(currTime: "7:00 PM")
+            createLargeTimestamp(currTime: "8:00 PM")
+            createLargeTimestamp(currTime: "9:00 PM")
+            createLargeTimestamp(currTime: "10:00 PM")
+            createLargeTimestamp(currTime: "11:00 PM")
+        }
+    } // createTimesOfTheDay
+    
+    private func createLargeTimestamp(currTime: String) -> some View {
+        Text(currTime).padding(4).background(RoundedRectangle(cornerRadius: 5).fill(Color.black.opacity(0.05)) // Set the corner radius here
+            .stroke(Color.gray, lineWidth: 2)
+        ).bold()
+    } // createLargeTimestamp
+    
     ///  Currently a placeholder function, but represents an action of the buttons on the cards with graphs.
     private func placeholder() -> Void {
         print("The button was clicked.")
