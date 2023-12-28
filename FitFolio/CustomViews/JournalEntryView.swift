@@ -106,11 +106,57 @@ class JournalEntryViewModel: ObservableObject {
 struct JournalEntryView: View {
     @ObservedObject var viewModel = JournalEntryViewModel()
     var body: some View {
-        VStack {
-            
-        }
+        HStack {
+            // Time stamp column
+            VStack {
+                Text("Hello World 1")
+                createHourlyTimestampLabels()
+            }
+            // Actual journal entry column
+            VStack {
+                Text("Hello World 2")
+            }
+        } // HStack
     } // body
     
+    private static func getMidnightDate() -> Date {
+        let calendar = Calendar.current
+        let components = DateComponents(hour: 0, minute: 0, second: 0)
+        return calendar.date(from: components) ?? Date()
+    } // getMidnightDate
+    
+    
+    private func generateHourlyTimestamps(startingFrom startDate: Date, for numberOfHours: Int) -> [Date] {
+        var timestamps: [Date] = []
+        
+        for hour in 0..<numberOfHours {
+            if let timestamp = Calendar.current.date(byAdding: .hour, value: hour, to: startDate) {
+                timestamps.append(timestamp)
+            }
+        }
+        return timestamps
+    } // generateHourlyTimestamps
+    
+    private func createHourlyTimestampLabels(startingFrom currDate: Date = getMidnightDate(), for numberOfHours: Int = 24) -> some View {
+        let generatedTimestamps = generateHourlyTimestamps(startingFrom: currDate, for: numberOfHours)
+        let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h:00 a"  // "h" for 12-hour clock, "a" for AM/PM
+        
+        return VStack {
+                ForEach(generatedTimestamps, id: \.self) { timestamp in
+                    let formattedHour = dateFormatter.string(from: timestamp)
+                    
+                    Text(formattedHour)
+                        .padding(4)
+                        .background(
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color.black.opacity(0.05))
+                                .stroke(Color.gray, lineWidth: 2)
+                        )
+                        .bold()
+                }
+            }
+    } // createHourlyTimestampLabels
     
 } // JournalEntryView
 
