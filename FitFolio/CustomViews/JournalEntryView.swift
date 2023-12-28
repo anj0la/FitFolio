@@ -104,10 +104,15 @@ class JournalEntryViewModel: ObservableObject {
 }
 
 struct JournalEntryView: View {
+    @ObservedObject var viewModel = JournalEntryViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        VStack {
+            
+        }
+    } // body
+    
+    
+} // JournalEntryView
 
 #Preview {
     JournalEntryView()
