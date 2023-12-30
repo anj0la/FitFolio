@@ -29,39 +29,22 @@ struct FoodCardView: View {
     
     var body: some View {
         ZStack (alignment: .center) {
-
-            Rectangle().stroke(
-                Color.black,
-                style: StrokeStyle(
-                    lineWidth: 2,
-                    lineCap: .round
-                )
-            ).frame(width: 300, height: 75)
-            
-            Image(systemName: "xmark.square").resizable().frame(width: 64, height: 64).padding(.leading, -144)
-            
+            createFoodCardBackground()
+            createFoodCardImage()
             VStack {
-                HStack (spacing: 80.0) {
-                    Text(foodName.uppercased()).font(.title3).bold()
-                    
-                    HStack {
-                        Text(calories.uppercased() + " ").font(.title3).bold()
-                        Image(systemName: "flame.fill").resizable()
-                            .frame(width: 13, height: 17).padding(.leading, -10)
-                    } // Food Name + Calories
-                    
-                }.padding(.leading, 64).padding(.top, 4)
-                HStack {
-                    HStack (spacing: 36.0) {
-                        Text(servingSize.toString()).bold().opacity(0.5).font(.footnote)
-                        Text(fats + "F " + carbs + "C " + protein + "P").bold().font(.footnote)
-                    } // Serving size + Macronutrients
-                }.padding(.leading, 68)
+                createFoodCardButton()
+                createFoodCardHeader()
+                createFoodCardBody()
             } // VStack
-            
-            
         } // ZStack (Card)
     } // body
+    
+    // Private functions
+    
+    ///  Currently a placeholder function, but represents an action of the buttons on the cards with graphs.
+    private func placeholder() -> Void {
+        print("The button was clicked.")
+    }
     
     private func createFoodCardBackground() -> some View {
         Rectangle().stroke(
@@ -74,16 +57,35 @@ struct FoodCardView: View {
     } // createCardBackground
     
     private func createFoodCardHeader() -> some View {
-        Image(systemName: "xmark.square").resizable().frame(width: 64, height: 64).padding(.leading, -144)
-    }
+        HStack (spacing: 80.0) {
+            Text(foodName.uppercased()).font(.title3).bold()
+            HStack {
+                Text(calories.uppercased() + " ").font(.title3).bold()
+                Image(systemName: "flame.fill").resizable()
+                    .frame(width: 13, height: 17).padding(.leading, -10)
+            } // Food Name + Calories
+        }.padding(.leading, 64)
+    } // createFoodCardHeader
     
     private func createFoodCardBody() -> some View {
-        Image(systemName: "xmark.square").resizable().frame(width: 64, height: 64).padding(.leading, -144)
-    }
+        HStack {
+            HStack (spacing: 36.0) {
+                Text(servingSize.toString()).bold().opacity(0.5).font(.footnote)
+                Text(fats + "F " + carbs + "C " + protein + "P").bold().font(.footnote)
+            } // Serving size + Macronutrients
+        }.padding(.leading, 68).padding(.bottom, 10)
+    } // createFoodCardBody
     
     private func createFoodCardImage() -> some View {
         Image(systemName: "xmark.square").resizable().frame(width: 64, height: 64).padding(.leading, -144)
-    }
+    } // createFoodCardImage
+    
+    private func createFoodCardButton() -> some View {
+        Button(action: placeholder) {
+            Image(systemName: "ellipsis")
+                .font(.body)
+        }.padding(.leading, 272).padding(.bottom, -2.5)
+    } //createFoodCardButton
     
 } // FoodCardView
 

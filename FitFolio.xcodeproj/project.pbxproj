@@ -24,6 +24,7 @@
 		32DF439E2B3CF450004469DD /* JournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF439D2B3CF450004469DD /* JournalEntryView.swift */; };
 		32DF43A42B3F1F76004469DD /* FoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43A32B3F1F76004469DD /* FoodCardView.swift */; };
 		32DF43A92B3F6F33004469DD /* MeasurementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43A82B3F6F33004469DD /* MeasurementType.swift */; };
+		32DF43AB2B3FC209004469DD /* FoodSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43AA2B3FC209004469DD /* FoodSummaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		32DF439D2B3CF450004469DD /* JournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryView.swift; sourceTree = "<group>"; };
 		32DF43A32B3F1F76004469DD /* FoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardView.swift; sourceTree = "<group>"; };
 		32DF43A82B3F6F33004469DD /* MeasurementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementType.swift; sourceTree = "<group>"; };
+		32DF43AA2B3FC209004469DD /* FoodSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSummaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				32DF43A32B3F1F76004469DD /* FoodCardView.swift */,
+				32DF43AA2B3FC209004469DD /* FoodSummaryView.swift */,
 			);
 			path = CardViews;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				32DF43A42B3F1F76004469DD /* FoodCardView.swift in Sources */,
 				327170BB2B19AC00008A91CE /* ContentView.swift in Sources */,
+				32DF43AB2B3FC209004469DD /* FoodSummaryView.swift in Sources */,
 				32DF439E2B3CF450004469DD /* JournalEntryView.swift in Sources */,
 				32DF43982B379217004469DD /* CircularProgressView.swift in Sources */,
 				32DF43A92B3F6F33004469DD /* MeasurementType.swift in Sources */,
