@@ -22,6 +22,8 @@
 		327170D82B19AC04008A91CE /* FitFolioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327170D72B19AC04008A91CE /* FitFolioUITestsLaunchTests.swift */; };
 		32DF43982B379217004469DD /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43972B379217004469DD /* CircularProgressView.swift */; };
 		32DF439E2B3CF450004469DD /* JournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF439D2B3CF450004469DD /* JournalEntryView.swift */; };
+		32DF43A42B3F1F76004469DD /* FoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43A32B3F1F76004469DD /* FoodCardView.swift */; };
+		32DF43A92B3F6F33004469DD /* MeasurementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43A82B3F6F33004469DD /* MeasurementType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		327170D72B19AC04008A91CE /* FitFolioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitFolioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		32DF43972B379217004469DD /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		32DF439D2B3CF450004469DD /* JournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryView.swift; sourceTree = "<group>"; };
+		32DF43A32B3F1F76004469DD /* FoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardView.swift; sourceTree = "<group>"; };
+		32DF43A82B3F6F33004469DD /* MeasurementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 		327170B72B19AC00008A91CE /* FitFolio */ = {
 			isa = PBXGroup;
 			children = (
+				32DF43A22B3F1F64004469DD /* CardViews */,
 				32DF439F2B3CF498004469DD /* Structs */,
 				32DF43992B3BF9E7004469DD /* Classes */,
 				32DF43962B379202004469DD /* CustomViews */,
@@ -172,6 +177,7 @@
 		32DF43992B3BF9E7004469DD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				32DF43A82B3F6F33004469DD /* MeasurementType.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -181,6 +187,14 @@
 			children = (
 			);
 			path = Structs;
+			sourceTree = "<group>";
+		};
+		32DF43A22B3F1F64004469DD /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				32DF43A32B3F1F76004469DD /* FoodCardView.swift */,
+			);
+			path = CardViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,9 +327,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DF43A42B3F1F76004469DD /* FoodCardView.swift in Sources */,
 				327170BB2B19AC00008A91CE /* ContentView.swift in Sources */,
 				32DF439E2B3CF450004469DD /* JournalEntryView.swift in Sources */,
 				32DF43982B379217004469DD /* CircularProgressView.swift in Sources */,
+				32DF43A92B3F6F33004469DD /* MeasurementType.swift in Sources */,
 				326552C22B257DEF00D596F9 /* JournalView.swift in Sources */,
 				326552C42B257E1D00D596F9 /* AddView.swift in Sources */,
 				326552C82B257F3D00D596F9 /* PathView.swift in Sources */,

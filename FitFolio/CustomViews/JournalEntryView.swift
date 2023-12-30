@@ -109,7 +109,6 @@ struct JournalEntryView: View {
         HStack {
             // Time stamp column
             VStack {
-                Text("Hello World 1")
                 createHourlyTimestampLabels()
             }
             // Actual journal entry column
