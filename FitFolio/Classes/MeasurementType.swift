@@ -68,8 +68,65 @@ class Food {
             self.vitaminD = vitaminD
         }   // constructor with all nutrient names as parameters
     
+    // Convenience initializer with just macronutrients
+        convenience init(name: String,
+                         calories: Double,
+                         totalFats: Double,
+                         saturatedFat: Double,
+                         transFat: Double,
+                         cholesterol: Double,
+                         sodium: Double,
+                         totalCarbs: Double,
+                         fiber: Double,
+                         sugar: Double,
+                         protein: Double) {
+            
+            self.init(name: name,
+                      calories: calories,
+                      totalFats: totalFats,
+                      saturatedFat: saturatedFat,
+                      transFat: transFat,
+                      cholesterol: cholesterol,
+                      sodium: sodium,
+                      totalCarbs: totalCarbs,
+                      fiber: fiber,
+                      sugar: sugar,
+                      protein: protein,
+                      calcium: 0.0,
+                      iron: 0.0,
+                      magnesium: 0.0,
+                      potassium: 0.0,
+                      zinc: 0.0,
+                      vitaminA: 0.0,
+                      vitaminC: 0.0,
+                      vitaminD: 0.0)
+        }
+
+        // Default constructor with all values set to zero
+        convenience init() {
+            self.init(name: "",
+                      calories: 0.0,
+                      totalFats: 0.0,
+                      saturatedFat: 0.0,
+                      transFat: 0.0,
+                      cholesterol: 0.0,
+                      sodium: 0.0,
+                      totalCarbs: 0.0,
+                      fiber: 0.0,
+                      sugar: 0.0,
+                      protein: 0.0,
+                      calcium: 0.0,
+                      iron: 0.0,
+                      magnesium: 0.0,
+                      potassium: 0.0,
+                      zinc: 0.0,
+                      vitaminA: 0.0,
+                      vitaminC: 0.0,
+                      vitaminD: 0.0)
+        }
+    
     
     var description: String {
             return "Property1: \(property1), Property2: \(property2)"
         }
-} // MeasurementType
+} // Food
