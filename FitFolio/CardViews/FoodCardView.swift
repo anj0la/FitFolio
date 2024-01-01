@@ -20,13 +20,9 @@ import SwiftUI
  */
 
 struct FoodCardView: View {
-    let foodName: String
-    let servingSize: MeasurementType
-    let calories: String
-    let fats: String
-    let carbs: String
-    let protein: String
-    
+    let foodItem: Food
+    let servingSize: ServingSize
+
     var body: some View {
         ZStack (alignment: .center) {
             createFoodCardBackground()
@@ -58,9 +54,9 @@ struct FoodCardView: View {
     
     private func createFoodCardHeader() -> some View {
         HStack (spacing: 80.0) {
-            Text(foodName.uppercased()).font(.title3).bold()
+            Text(foodItem.name.uppercased()).font(.title3).bold()
             HStack {
-                Text(calories.uppercased() + " ").font(.title3).bold()
+                Text(String(foodItem.calories).uppercased() + " ").font(.title3).bold()
                 Image(systemName: "flame.fill").resizable()
                     .frame(width: 13, height: 17).padding(.leading, -10)
             } // Food Name + Calories
@@ -71,7 +67,8 @@ struct FoodCardView: View {
         HStack {
             HStack (spacing: 36.0) {
                 Text(servingSize.toString()).bold().opacity(0.5).font(.footnote)
-                Text(fats + "F " + carbs + "C " + protein + "P").bold().font(.footnote)
+                
+                Text(String(format: "%.0f", foodItem.totalFats) + "F " + String(format: "%.0f", foodItem.totalCarbs) + "C " + String(format: "%.0f", foodItem.protein) + "P").bold().font(.footnote)
             } // Serving size + Macronutrients
         }.padding(.leading, 68).padding(.bottom, 10)
     } // createFoodCardBody
@@ -91,5 +88,6 @@ struct FoodCardView: View {
 
 
 #Preview {
-    FoodCardView(foodName: "Banana", servingSize: MeasurementType(value: 500, isMetric: true, unitName: "milimeteres"), calories: "400", fats: "10", carbs: "25", protein: "17")
+    FoodCardView(foodItem: Food(name: "Banana", calories: 400, totalFats: 10.0, totalCarbs: 25.0, protein: 17.0), servingSize: ServingSize(value: 500, isMetric: true, unitName: "milimeteres"))
+
 }

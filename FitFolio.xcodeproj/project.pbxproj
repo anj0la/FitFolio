@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320CA64E2B433FB80009F4B1 /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320CA64D2B433FB80009F4B1 /* FoodList.swift */; };
 		326552C02B257DB500D596F9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552BF2B257DB500D596F9 /* DashboardView.swift */; };
 		326552C22B257DEF00D596F9 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552C12B257DEF00D596F9 /* JournalView.swift */; };
 		326552C42B257E1D00D596F9 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552C32B257E1D00D596F9 /* AddView.swift */; };
@@ -24,7 +25,7 @@
 		32DF43982B379217004469DD /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43972B379217004469DD /* CircularProgressView.swift */; };
 		32DF439E2B3CF450004469DD /* JournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF439D2B3CF450004469DD /* JournalEntryView.swift */; };
 		32DF43A42B3F1F76004469DD /* FoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43A32B3F1F76004469DD /* FoodCardView.swift */; };
-		32DF43A92B3F6F33004469DD /* MeasurementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43A82B3F6F33004469DD /* MeasurementType.swift */; };
+		32DF43A92B3F6F33004469DD /* ServingSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43A82B3F6F33004469DD /* ServingSize.swift */; };
 		32DF43AB2B3FC209004469DD /* FoodSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43AA2B3FC209004469DD /* FoodSummaryView.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		320CA64D2B433FB80009F4B1 /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
 		326552BF2B257DB500D596F9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		326552C12B257DEF00D596F9 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		326552C32B257E1D00D596F9 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 		32DF43972B379217004469DD /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		32DF439D2B3CF450004469DD /* JournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryView.swift; sourceTree = "<group>"; };
 		32DF43A32B3F1F76004469DD /* FoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardView.swift; sourceTree = "<group>"; };
-		32DF43A82B3F6F33004469DD /* MeasurementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementType.swift; sourceTree = "<group>"; };
+		32DF43A82B3F6F33004469DD /* ServingSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingSize.swift; sourceTree = "<group>"; };
 		32DF43AA2B3FC209004469DD /* FoodSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSummaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,8 +183,9 @@
 		32DF43992B3BF9E7004469DD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				32DF43A82B3F6F33004469DD /* MeasurementType.swift */,
+				32DF43A82B3F6F33004469DD /* ServingSize.swift */,
 				32C7DA492B422B0E009FA35E /* Food.swift */,
+				320CA64D2B433FB80009F4B1 /* FoodList.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -338,10 +341,11 @@
 				32DF43AB2B3FC209004469DD /* FoodSummaryView.swift in Sources */,
 				32DF439E2B3CF450004469DD /* JournalEntryView.swift in Sources */,
 				32DF43982B379217004469DD /* CircularProgressView.swift in Sources */,
-				32DF43A92B3F6F33004469DD /* MeasurementType.swift in Sources */,
+				32DF43A92B3F6F33004469DD /* ServingSize.swift in Sources */,
 				326552C22B257DEF00D596F9 /* JournalView.swift in Sources */,
 				32C7DA4A2B422B0E009FA35E /* Food.swift in Sources */,
 				326552C42B257E1D00D596F9 /* AddView.swift in Sources */,
+				320CA64E2B433FB80009F4B1 /* FoodList.swift in Sources */,
 				326552C82B257F3D00D596F9 /* PathView.swift in Sources */,
 				326552C02B257DB500D596F9 /* DashboardView.swift in Sources */,
 				327170BD2B19AC00008A91CE /* Item.swift in Sources */,
