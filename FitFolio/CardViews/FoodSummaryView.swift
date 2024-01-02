@@ -22,8 +22,8 @@ struct FoodSummaryView: View {
             Text("F").font(.callout).bold().padding(.leading, -5)
             Text(carbs)
             Text("C").font(.callout).bold().padding(.leading, -5)
-            Text("30")
-            Text(protein).font(.callout).bold().padding(.leading, -5)
+            Text(protein)
+            Text("P").font(.callout).bold().padding(.leading, -5)
             Button(action: addNewFoodToList) {
                 Image(systemName: "plus.app.fill")
                     .font(.body).foregroundStyle(.black)

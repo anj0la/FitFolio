@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		320CA64E2B433FB80009F4B1 /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320CA64D2B433FB80009F4B1 /* FoodList.swift */; };
+		320CA6532B43CFF90009F4B1 /* TimestampsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320CA6522B43CFF90009F4B1 /* TimestampsView.swift */; };
 		326552C02B257DB500D596F9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552BF2B257DB500D596F9 /* DashboardView.swift */; };
 		326552C22B257DEF00D596F9 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552C12B257DEF00D596F9 /* JournalView.swift */; };
 		326552C42B257E1D00D596F9 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552C32B257E1D00D596F9 /* AddView.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		320CA64D2B433FB80009F4B1 /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
+		320CA6522B43CFF90009F4B1 /* TimestampsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampsView.swift; sourceTree = "<group>"; };
 		326552BF2B257DB500D596F9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		326552C12B257DEF00D596F9 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		326552C32B257E1D00D596F9 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				32DF43A32B3F1F76004469DD /* FoodCardView.swift */,
 				32DF43AA2B3FC209004469DD /* FoodSummaryView.swift */,
+				320CA6522B43CFF90009F4B1 /* TimestampsView.swift */,
 			);
 			path = CardViews;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DF43A42B3F1F76004469DD /* FoodCardView.swift in Sources */,
+				320CA6532B43CFF90009F4B1 /* TimestampsView.swift in Sources */,
 				327170BB2B19AC00008A91CE /* ContentView.swift in Sources */,
 				32DF43AB2B3FC209004469DD /* FoodSummaryView.swift in Sources */,
 				32DF439E2B3CF450004469DD /* JournalEntryView.swift in Sources */,
