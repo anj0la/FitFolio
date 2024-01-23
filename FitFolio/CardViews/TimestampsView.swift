@@ -23,7 +23,6 @@ struct TimestampsView: View {
         
     } // body
     
-    
     private func createLargeTimestamp(currTime: String) -> some View {
         Text(currTime).padding(10).background(RoundedRectangle(cornerRadius: 5).fill(Color(red: 0.95, green: 0.95, blue: 0.95)) // Set the corner radius here
             .stroke(Color.gray.opacity(0.1), lineWidth: 2)

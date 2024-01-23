@@ -68,7 +68,9 @@ struct FoodCardView: View {
             HStack (spacing: 36.0) {
                 Text(servingSize.toString()).bold().opacity(0.5).font(.footnote)
                 
-                Text(String(format: "%.0f", foodItem.totalFats) + "F " + String(format: "%.0f", foodItem.totalCarbs) + "C " + String(format: "%.0f", foodItem.protein) + "P").bold().font(.footnote)
+                Text("\(Int(foodItem.totalFats))F \(Int(foodItem.totalCarbs))C \(Int(foodItem.protein))P")
+                    .bold()
+                    .font(.footnote)
             } // Serving size + Macronutrients
         }.padding(.leading, 68).padding(.bottom, 10)
     } // createFoodCardBody
