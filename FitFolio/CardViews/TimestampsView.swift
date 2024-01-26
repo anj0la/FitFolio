@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct TimestampsView: View {
+   // let dailyTimestamps: [Date] // this is a dynamic array that will change accordingly to the amount of food items that a user has put in a day. by default, the dailytimestamps will be full of ONLY timestamps with a :00
+    
     var body: some View {
         ZStack {
             Rectangle().fill(Color(red: 0.90, green: 0.90, blue: 0.90)).frame(width: 2, height: 200).rotationEffect(.degrees(180.0)) // the height would change
             VStack(spacing: 10.0) {
+               // for timestamp in dailyTimestamps {
+                    
+             //   }
+                
                 createLargeTimestamp(currTime: "12:00 AM")
                 createSmallTimestamp(currTime: "12:20 AM")
                 createLargeTimestamp(currTime: "1:00 AM")
