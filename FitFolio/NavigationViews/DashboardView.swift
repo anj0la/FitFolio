@@ -67,7 +67,7 @@ struct DashboardView: View {
             Text(getTimeOfDay())
                 .font(.subheadline)
             Text(getDay())
-                .font(.title)
+                .font(.title).textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
             Text("Nutrition Overview")
                 .font(.title3).padding(.top, 0.01)
         }
