@@ -92,9 +92,11 @@ struct JournalView: View {
     // I might make another struct called JournalEntry which actually creates one entry in the journal, by getting the timestamp, and then the calories, fats, carbs, and protein from the food.
     private func createJournal() -> some View {
         HStack {
-            Text("HI")
-            //createTimesOfTheDay()
-            //createJournalEntries()
+            TimestampsView()
+            VStack {
+                FoodSummaryView(calories: "400", fats: "10", carbs: "25", protein: "30").frame(width: 250)
+                FoodCardView(foodItem: Food(name: "Banana", calories: 400, totalFats: 10.0, totalCarbs: 25.0, protein: 17.0), servingSize: ServingSize(value: 500, isMetric: true, unitName: "milimeteres"))
+            }
         }
     } // createJournal
     
@@ -107,7 +109,14 @@ struct JournalView: View {
         // all of the EMPTY values would be displayed
         // and would be in "editing / planning" mode
     }
-}
+    
+    private func createSearchBar() -> some View {
+        HStack {
+            Text("TO BE FILLED")
+        }
+    }
+    
+} // JournalView
 
 #Preview {
     JournalView(selectedText: .constant("Preview Text"))

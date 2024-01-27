@@ -27,7 +27,7 @@ struct FoodSummaryView: View {
             Button(action: addNewFoodToList) {
                 Image(systemName: "plus.app.fill")
                     .font(.body).foregroundStyle(.black)
-            }.padding(.leading, 45)
+            }.padding(.leading, 30)
         } // HStack
     } // body
     

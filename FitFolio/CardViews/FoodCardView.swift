@@ -49,41 +49,41 @@ struct FoodCardView: View {
                 lineWidth: 2,
                 lineCap: .round
             )
-        ).frame(width: 300, height: 75)
+        ).frame(width: 250, height: 65)
     } // createCardBackground
     
     private func createFoodCardHeader() -> some View {
-        HStack (spacing: 80.0) {
-            Text(foodItem.name.uppercased()).font(.title3).bold()
+        HStack (spacing: 60.0) {
+            Text(foodItem.name.uppercased()).font(.headline).bold()
             HStack {
-                Text(String(foodItem.calories).uppercased() + " ").font(.title3).bold()
+                Text(String(foodItem.calories).uppercased() + " ").font(.headline).bold()
                 Image(systemName: "flame.fill").resizable()
                     .frame(width: 13, height: 17).padding(.leading, -10)
             } // Food Name + Calories
-        }.padding(.leading, 64)
+        }.padding(.leading, 56)
     } // createFoodCardHeader
     
     private func createFoodCardBody() -> some View {
         HStack {
-            HStack (spacing: 36.0) {
-                Text(servingSize.toString()).bold().opacity(0.5).font(.footnote)
+            HStack (spacing: 10.0) {
+                Text(servingSize.toString()).bold().opacity(0.5).font(.caption)
                 
                 Text("\(Int(foodItem.totalFats))F \(Int(foodItem.totalCarbs))C \(Int(foodItem.protein))P")
                     .bold()
                     .font(.footnote)
             } // Serving size + Macronutrients
-        }.padding(.leading, 68).padding(.bottom, 10)
+        }.padding(.leading, 60).padding(.bottom, 10)
     } // createFoodCardBody
     
     private func createFoodCardImage() -> some View {
-        Image(systemName: "xmark.square").resizable().frame(width: 64, height: 64).padding(.leading, -144)
+        Image(systemName: "xmark.square").resizable().frame(width: 50, height: 50).padding(.leading, -118)
     } // createFoodCardImage
     
     private func createFoodCardButton() -> some View {
         Button(action: placeholder) {
             Image(systemName: "ellipsis")
-                .font(.body)
-        }.padding(.leading, 272).padding(.bottom, -2.5)
+                .font(.body).foregroundStyle(.black)
+        }.padding(.leading, 222).padding(.bottom, -4.5)
     } //createFoodCardButton
     
 } // FoodCardView
