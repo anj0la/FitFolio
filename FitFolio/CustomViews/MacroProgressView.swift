@@ -8,25 +8,21 @@
 import SwiftUI
 
 struct MacroProgressView: View {
-    let weeklyCaloriesProgress: [CGFloat]
-    let weeklyFatsProgress: [CGFloat]
-    let weeklyCarbsProgress: [CGFloat]
-    let weeklyProteinProgress: [CGFloat]
+    let weeklyProgress: [[CGFloat]]
     
     var body: some View {
-        generateAProgressBarRow(weeklyProgress: weeklyCaloriesProgress)
-        generateAProgressBarRow(weeklyProgress: weeklyFatsProgress)
-        generateAProgressBarRow(weeklyProgress: weeklyCarbsProgress)
-        generateAProgressBarRow(weeklyProgress: weeklyProteinProgress)
+        ForEach(0..<weeklyProgress.count, id: \.self) { progressIndex in
+            generateAProgressBarRow(weeklyProgress: weeklyProgress[progressIndex], color: getColor(forIndex: progressIndex))
+                    }
 
         // Call the function with the weekly progress array
     } // body
     
-    private func generateAProgressBarRow(weeklyProgress: [CGFloat]) -> some View {
+    private func generateAProgressBarRow(weeklyProgress: [CGFloat], color: Color) -> some View {
         HStack {
             ForEach(0..<7) { dayIndex in
                 ProgressView(value: weeklyProgress[dayIndex])
-                    .progressViewStyle(LinearProgressViewStyle(tint: .black))
+                    .progressViewStyle(LinearProgressViewStyle(tint: color))
                     .padding()
                     .scaleEffect(1.5)
                     .rotationEffect(.degrees(270))
@@ -54,5 +50,10 @@ struct MacroProgressView: View {
 
 
 #Preview {
-    MacroProgressView(weeklyCaloriesProgress: [0.2, 0.4, 0.5, 0.7, 0.0, 0.0, 0.0], weeklyFatsProgress: [0.1, 0.2, 0.3, 0.4, 0.0, 0.0, 0.0], weeklyCarbsProgress:[0.3, 0.1, 0.9, 0.5, 0.0, 0.0, 0.0], weeklyProteinProgress: [0.0, 0.2, 0.8, 0.6, 0.0, 0.0, 0.0])
+    MacroProgressView(weeklyProgress: [
+        [0.2, 0.5, 0.8, 0.3, 0.0, 0.0, 0.0], // Weekly Calories
+        [0.3, 0.6, 0.7, 0.2, 0.0, 0.0, 0.0], // Weekly Fats
+        [0.4, 0.7, 0.5, 0.4, 0.0, 0.0, 0.0], // Weekly Carbs
+        [0.1, 0.4, 0.6, 0.8, 0.0, 0.0, 0.0]  // Weekly Protein
+    ])
 }
