@@ -11,9 +11,14 @@ struct MacroProgressView: View {
     let weeklyProgress: [[CGFloat]]
     
     var body: some View {
-        ForEach(0..<weeklyProgress.count, id: \.self) { progressIndex in
-            generateAProgressBarRow(weeklyProgress: weeklyProgress[progressIndex], color: getColor(forIndex: progressIndex))
-                    }
+        
+        VStack(alignment: .leading) {
+            ForEach(0..<weeklyProgress.count, id: \.self) { progressIndex in
+                generateAProgressBarRow(weeklyProgress: weeklyProgress[progressIndex], color: getColor(forIndex: progressIndex))
+                        }
+            generateDaysOfTheWeekText()
+        } // VStack
+        
 
         // Call the function with the weekly progress array
     } // body
@@ -33,17 +38,33 @@ struct MacroProgressView: View {
     private func getColor(forIndex index: Int) -> Color {
         switch index {
         case 0:
-            return .blue // Calories
+            return .green // Calories
         case 1:
-            return .green // Fats
+            return .yellow // Fats
         case 2:
-            return .orange // Carbs
+            return .cyan // Carbs
         case 3:
-            return .red // Protein
+            return .purple // Protein
         default:
             return .black
         }
-    }
+    } // getColor
+    
+    
+    /// Returns an HStack displaying the days of the week.
+    ///
+    /// - Returns: HStack displaying each day of the week as text.
+    private func generateDaysOfTheWeekText() -> some View {
+        HStack {
+            Text("Mo").font(.caption).bold().padding(.leading, 18)
+            Text("Tu").font(.caption).bold().padding(.leading, 29)
+            Text("We").font(.caption).bold().padding(.leading, 33)
+            Text("Th").font(.caption).bold().padding(.leading, 32)
+            Text("Fr").font(.caption).bold().padding(.leading, 36)
+            Text("Sa").font(.caption).bold().padding(.leading, 34)
+            Text("Su").font(.caption).bold().padding(.leading, 33)
+        }
+    } // generateDaysOfTheWeekText
     
 } // MacroProgressView
 
