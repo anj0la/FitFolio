@@ -58,11 +58,11 @@ struct MacroProgressView: View {
         HStack {
             Text("Mo").font(.caption).bold().padding(.leading, 18)
             Text("Tu").font(.caption).bold().padding(.leading, 29)
-            Text("We").font(.caption).bold().padding(.leading, 33)
-            Text("Th").font(.caption).bold().padding(.leading, 32)
-            Text("Fr").font(.caption).bold().padding(.leading, 36)
-            Text("Sa").font(.caption).bold().padding(.leading, 34)
-            Text("Su").font(.caption).bold().padding(.leading, 33)
+            Text("We").font(.caption).bold().padding(.leading, 26)
+            Text("Th").font(.caption).bold().padding(.leading, 28)
+            Text("Fr").font(.caption).bold().padding(.leading, 30)
+            Text("Sa").font(.caption).bold().padding(.leading, 30)
+            Text("Su").font(.caption).bold().padding(.leading, 32)
         }
     } // generateDaysOfTheWeekText
     

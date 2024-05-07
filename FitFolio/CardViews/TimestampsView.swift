@@ -13,7 +13,7 @@ struct TimestampsView: View {
     var body: some View {
         ZStack {
             Rectangle().fill(Color(red: 0.90, green: 0.90, blue: 0.90)).frame(width: 2, height: 200).rotationEffect(.degrees(180.0)) // the height would change
-            VStack(spacing: 10.0) {
+            VStack(spacing: 20.0) {
                // for timestamp in dailyTimestamps {
                     
              //   }

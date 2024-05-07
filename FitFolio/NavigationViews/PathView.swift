@@ -19,11 +19,13 @@ struct PathView: View {
                 generateDailyAndWeeklyMetrics()
                 Divider()
                 
-                // Rows
-                ForEach(0..<4) { row in
-                    generateProgressBarRows()
-                }
-                generateDaysOfTheWeekText()
+                // Custom Macro Progress View
+                MacroProgressView(weeklyProgress: [
+                    [0.2, 0.5, 0.8, 0.3, 0.0, 0.0, 0.0], // Weekly Calories
+                    [0.3, 0.6, 0.7, 0.2, 0.0, 0.0, 0.0], // Weekly Fats
+                    [0.4, 0.7, 0.5, 0.4, 0.0, 0.0, 0.0], // Weekly Carbs
+                    [0.1, 0.4, 0.6, 0.8, 0.0, 0.0, 0.0]  // Weekly Protein
+                ])
                 Spacer()
             } // VStack
             Spacer()
