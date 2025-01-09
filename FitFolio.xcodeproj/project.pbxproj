@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320CA64E2B433FB80009F4B1 /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320CA64D2B433FB80009F4B1 /* FoodList.swift */; };
+		320CA6532B43CFF90009F4B1 /* TimestampsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320CA6522B43CFF90009F4B1 /* TimestampsView.swift */; };
+		326552C02B257DB500D596F9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552BF2B257DB500D596F9 /* DashboardView.swift */; };
+		326552C22B257DEF00D596F9 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552C12B257DEF00D596F9 /* JournalView.swift */; };
+		326552C42B257E1D00D596F9 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552C32B257E1D00D596F9 /* AddView.swift */; };
+		326552C82B257F3D00D596F9 /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552C72B257F3D00D596F9 /* PathView.swift */; };
+		326552CA2B257F7900D596F9 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326552C92B257F7900D596F9 /* MoreView.swift */; };
+		326EDA792B6328AB00626300 /* CircularImageWithOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326EDA782B6328AB00626300 /* CircularImageWithOutlineView.swift */; };
 		327170B92B19AC00008A91CE /* FitFolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327170B82B19AC00008A91CE /* FitFolioApp.swift */; };
 		327170BB2B19AC00008A91CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327170BA2B19AC00008A91CE /* ContentView.swift */; };
 		327170BD2B19AC00008A91CE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327170BC2B19AC00008A91CE /* Item.swift */; };
@@ -15,6 +23,14 @@
 		327170CC2B19AC04008A91CE /* FitFolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327170CB2B19AC04008A91CE /* FitFolioTests.swift */; };
 		327170D62B19AC04008A91CE /* FitFolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327170D52B19AC04008A91CE /* FitFolioUITests.swift */; };
 		327170D82B19AC04008A91CE /* FitFolioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327170D72B19AC04008A91CE /* FitFolioUITestsLaunchTests.swift */; };
+		328F70F82B6579B300AE7135 /* MacroProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F70F72B6579B300AE7135 /* MacroProgressView.swift */; };
+		328F70FA2B662EFA00AE7135 /* DailyMacroProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F70F92B662EFA00AE7135 /* DailyMacroProgressView.swift */; };
+		32C7DA4A2B422B0E009FA35E /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C7DA492B422B0E009FA35E /* Food.swift */; };
+		32DF43982B379217004469DD /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43972B379217004469DD /* CircularProgressView.swift */; };
+		32DF439E2B3CF450004469DD /* JournalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF439D2B3CF450004469DD /* JournalEntryView.swift */; };
+		32DF43A42B3F1F76004469DD /* FoodCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43A32B3F1F76004469DD /* FoodCardView.swift */; };
+		32DF43A92B3F6F33004469DD /* ServingSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43A82B3F6F33004469DD /* ServingSize.swift */; };
+		32DF43AB2B3FC209004469DD /* FoodSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF43AA2B3FC209004469DD /* FoodSummaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		320CA64D2B433FB80009F4B1 /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
+		320CA6522B43CFF90009F4B1 /* TimestampsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampsView.swift; sourceTree = "<group>"; };
+		326552BF2B257DB500D596F9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		326552C12B257DEF00D596F9 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
+		326552C32B257E1D00D596F9 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		326552C72B257F3D00D596F9 /* PathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathView.swift; sourceTree = "<group>"; };
+		326552C92B257F7900D596F9 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		326EDA782B6328AB00626300 /* CircularImageWithOutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageWithOutlineView.swift; sourceTree = "<group>"; };
 		327170B52B19AC00008A91CE /* FitFolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327170B82B19AC00008A91CE /* FitFolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitFolioApp.swift; sourceTree = "<group>"; };
 		327170BA2B19AC00008A91CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +70,14 @@
 		327170D12B19AC04008A91CE /* FitFolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitFolioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		327170D52B19AC04008A91CE /* FitFolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitFolioUITests.swift; sourceTree = "<group>"; };
 		327170D72B19AC04008A91CE /* FitFolioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitFolioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		328F70F72B6579B300AE7135 /* MacroProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroProgressView.swift; sourceTree = "<group>"; };
+		328F70F92B662EFA00AE7135 /* DailyMacroProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMacroProgressView.swift; sourceTree = "<group>"; };
+		32C7DA492B422B0E009FA35E /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		32DF43972B379217004469DD /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		32DF439D2B3CF450004469DD /* JournalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntryView.swift; sourceTree = "<group>"; };
+		32DF43A32B3F1F76004469DD /* FoodCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardView.swift; sourceTree = "<group>"; };
+		32DF43A82B3F6F33004469DD /* ServingSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServingSize.swift; sourceTree = "<group>"; };
+		32DF43AA2B3FC209004469DD /* FoodSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSummaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +105,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		326552BE2B257DA200D596F9 /* NavigationViews */ = {
+			isa = PBXGroup;
+			children = (
+				326552BF2B257DB500D596F9 /* DashboardView.swift */,
+				326552C12B257DEF00D596F9 /* JournalView.swift */,
+				326552C32B257E1D00D596F9 /* AddView.swift */,
+				326552C72B257F3D00D596F9 /* PathView.swift */,
+				326552C92B257F7900D596F9 /* MoreView.swift */,
+			);
+			path = NavigationViews;
+			sourceTree = "<group>";
+		};
 		327170AC2B19ABFF008A91CE = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +140,11 @@
 		327170B72B19AC00008A91CE /* FitFolio */ = {
 			isa = PBXGroup;
 			children = (
+				32DF43A22B3F1F64004469DD /* CardViews */,
+				32DF439F2B3CF498004469DD /* Structs */,
+				32DF43992B3BF9E7004469DD /* Classes */,
+				32DF43962B379202004469DD /* CustomViews */,
+				326552BE2B257DA200D596F9 /* NavigationViews */,
 				327170B82B19AC00008A91CE /* FitFolioApp.swift */,
 				327170BA2B19AC00008A91CE /* ContentView.swift */,
 				327170BC2B19AC00008A91CE /* Item.swift */,
@@ -128,6 +177,45 @@
 				327170D72B19AC04008A91CE /* FitFolioUITestsLaunchTests.swift */,
 			);
 			path = FitFolioUITests;
+			sourceTree = "<group>";
+		};
+		32DF43962B379202004469DD /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				32DF43972B379217004469DD /* CircularProgressView.swift */,
+				32DF439D2B3CF450004469DD /* JournalEntryView.swift */,
+				326EDA782B6328AB00626300 /* CircularImageWithOutlineView.swift */,
+				328F70F72B6579B300AE7135 /* MacroProgressView.swift */,
+				328F70F92B662EFA00AE7135 /* DailyMacroProgressView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		32DF43992B3BF9E7004469DD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				32DF43A82B3F6F33004469DD /* ServingSize.swift */,
+				32C7DA492B422B0E009FA35E /* Food.swift */,
+				320CA64D2B433FB80009F4B1 /* FoodList.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		32DF439F2B3CF498004469DD /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		32DF43A22B3F1F64004469DD /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				32DF43A32B3F1F76004469DD /* FoodCardView.swift */,
+				32DF43AA2B3FC209004469DD /* FoodSummaryView.swift */,
+				320CA6522B43CFF90009F4B1 /* TimestampsView.swift */,
+			);
+			path = CardViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +348,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DF43A42B3F1F76004469DD /* FoodCardView.swift in Sources */,
+				320CA6532B43CFF90009F4B1 /* TimestampsView.swift in Sources */,
 				327170BB2B19AC00008A91CE /* ContentView.swift in Sources */,
+				328F70FA2B662EFA00AE7135 /* DailyMacroProgressView.swift in Sources */,
+				32DF43AB2B3FC209004469DD /* FoodSummaryView.swift in Sources */,
+				32DF439E2B3CF450004469DD /* JournalEntryView.swift in Sources */,
+				32DF43982B379217004469DD /* CircularProgressView.swift in Sources */,
+				32DF43A92B3F6F33004469DD /* ServingSize.swift in Sources */,
+				326552C22B257DEF00D596F9 /* JournalView.swift in Sources */,
+				326EDA792B6328AB00626300 /* CircularImageWithOutlineView.swift in Sources */,
+				32C7DA4A2B422B0E009FA35E /* Food.swift in Sources */,
+				326552C42B257E1D00D596F9 /* AddView.swift in Sources */,
+				320CA64E2B433FB80009F4B1 /* FoodList.swift in Sources */,
+				326552C82B257F3D00D596F9 /* PathView.swift in Sources */,
+				326552C02B257DB500D596F9 /* DashboardView.swift in Sources */,
 				327170BD2B19AC00008A91CE /* Item.swift in Sources */,
 				327170B92B19AC00008A91CE /* FitFolioApp.swift in Sources */,
+				328F70F82B6579B300AE7135 /* MacroProgressView.swift in Sources */,
+				326552CA2B257F7900D596F9 /* MoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

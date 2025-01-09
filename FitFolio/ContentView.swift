@@ -1,61 +1,74 @@
 //
-//  ContentView.swift
-//  FitFolio
+//  File: ContentView.swift
+//  App: FitFolio
+//  Author: Anjola aina
+//  Last Modified: Saturday, December 9th, 2023
 //
-//  Created by Anjola Aina on 2023-11-30.
+// Description:
+//
+// This Swift file defines the ContentView struct, which serves as the main content view for FitFolio. The ContentView includes a TabView to handle navigation between different screens within the application.
+//
+// Structure:
+// - ContentView: SwiftUI View struct responsible for the main content layout.
+//   - TabView: A SwiftUI container view that manages multiple child views, allowing users to navigate between them using tabs.
+//
+// Usage:
+// - ContentView is typically set as the root view in the application's main file (e.g., App.swift).
+// - Inside the TabView, different child views represent distinct screens or functionalities of the application.
+// - Each child view can be customized and extended as needed.
+
+// Example:
+//
+// struct ContentView: View {
+//      var body: some View {
+//          TabView {
+//              Child view 1
+//              Text("Screen 1")
+//              .tabItem {
+//              Image(systemName: "1.circle")
+//              Text("Screen 1")
+//              }
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @State var currentView = "" // default value
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        Text(currentView)
+        TabView {
+            ScrollView {
+                DashboardView(selectedText: $currentView)
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+            .tabItem {
+                    Label("Dashboard", systemImage: "square.grid.2x2.fill")
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+            ScrollView {
+                JournalView(selectedText: $currentView)
+            }
+                .tabItem {
+                    Label("Journal", systemImage: "book.pages.fill")
                 }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
-}
+            AddView(selectedText: $currentView)
+                .tabItem {
+                    Label("Add", systemImage: "plus.circle.fill")
+                }
+            PathView(selectedText: $currentView)
+                .tabItem {
+                    Label("Path", systemImage: "point.topleft.down.to.point.bottomright.curvepath.fill")
+                }
+            MoreView(selectedText: $currentView)
+                .tabItem {
+                    Label("More", systemImage: "ellipsis")
+                }
+        }.tint(.black)
+        
+    } // body
+    
+   
+} // ContentView
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
-}
+} // #Preview
