@@ -8,6 +8,7 @@ The wireframes for the navigation pages can be viewed <a href="https://www.figma
 ">here</a>
 
 Below is the Figma navigation screens image for those who prefer not to click the link:
+
 <img width="530" alt="image" src="https://github.com/user-attachments/assets/ef513790-e2ff-4928-9362-cb38992660aa" />
 
 ## Features
